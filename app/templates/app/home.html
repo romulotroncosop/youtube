@@ -1,0 +1,87 @@
+{% extends 'app/base.html' %}
+{% load static %}
+
+{% block title %}
+<title>Index</title>
+{% endblock %}    
+    
+{% block content %}
+<body class="bg-index" >
+    <div class="container-fluid">
+        <div class="container">
+            <div class="row justify-content-center mt-5">
+                <img src="{% static 'app/assets/logo.png' %}" alt="logo" class="logo-company mb-0" style="max-width: 50%;">
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <form action="" class="d-flex justify-content-center mt-5 input-group">
+                        
+                        <input list="browsers" name="browser" id="browser" type="text" class="form-control mt-5 rounded-pill" placeholder="Search u video">
+                        <datalist id="browsers">
+                            <option value="Edge" >
+                            <option value="Firefox" >
+                            <option value="Chrome">
+                            <option value="Opera" >
+                            <option value="Safari">
+                        </datalist>
+                        
+                    </form>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#ModalResult">
+                        Search
+                      </button>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    <div class="modal fade" id="ModalResult" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content text-dark">
+            <div class="modal-header">
+              <h5 class="modal-title" id="staticBackdropLabel">Title of video</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row justify-content-center mb-5">
+                    <img src="{% static 'app/assets/logo.png' %}" alt="logo" class="logo-company mb-0">
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <form class="form-floating">
+                            <input type="email" class="form-control" id="author"  value="Author of video" disabled>
+                            <label for="author">Author</label>
+                          </form>
+                    </div>
+                    
+                </div>
+                <div class="row mt-2">
+                    <div class="col-12">
+                        <form class="form-floating">
+                            <input type="email" class="form-control" id="description"  value="Description of video" disabled>
+                            <label for="description">Description</label>
+                          </form>
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col-6">
+                        <button type="button" class="btn btn-warning" disabled>
+                            Views count <span class="badge bg-secondary"> 4</span>
+                          </button>
+                    </div>
+                    <div class="col-6">
+                        <button type="button" class="btn btn-primary">Link to youtube video</button>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>  
+
+  
+
+</body>
+{% endblock %}

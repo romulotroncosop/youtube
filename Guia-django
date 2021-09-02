@@ -1,0 +1,23 @@
+/usr/bin/python3 -m pip install --upgrade pip
+pip install Django==3.2.6
+django-admin startproject prueba
+python3 manage.py startapp app
+
+Crear una aplicacion con
+python3 manage.py startapp app // app es el nombre la aplicación
+
+importar app en Nombredelproyecto/settinngs.py en el apartado de 
+INSTALLED_APPS = [ al final poner 'app',
+
+correr servidor local
+python3 manage.py runserver
+
+HTLS
+crear dentro de nuestra app una carpeta que se llame templates y adentro app
+aahi van los htmls
+
+crear una un archivo urls
+
+crear dir tatic/Nombre de la app y ahi se guardan los css,js,imagenes,etc 
+
+importarlos {% load static %}

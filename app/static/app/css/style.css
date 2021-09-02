@@ -1,0 +1,14 @@
+
+.bg-index{
+    background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), url("'../assets/landscape-5426755_1920.jpg'"), no-repeat;
+    color: white;
+    background-size: cover;
+    height: 100%;
+    size: 100%;
+}
+
+.logo-company{
+    display: block;
+    max-width: 50%;
+    height: auto;
+}
