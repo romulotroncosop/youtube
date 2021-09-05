@@ -34,45 +34,42 @@
         </div>
         
     </div>
-    <div class="modal fade" id="ModalResult" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog">
+    <div class="modal fade" id="ModalResult"  tabindex="-1" aria-labelledby="ModalResult" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
           <div class="modal-content text-dark">
             <div class="modal-header">
-              <h5 class="modal-title" id="staticBackdropLabel">Title of video</h5>
+              <h5 class="modal-title" id="ModalResult">Video List</h5>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-body">
-                <div class="row justify-content-center mb-5">
-                    <img src="{% static 'app/assets/logo.png' %}" alt="logo" class="logo-company mb-0">
-                </div>
-                <div class="row">
-                    <div class="col-12">
-                        <form class="form-floating">
-                            <input type="email" class="form-control" id="author"  value="Author of video" disabled>
-                            <label for="author">Author</label>
-                          </form>
-                    </div>
-                    
-                </div>
-                <div class="row mt-2">
-                    <div class="col-12">
-                        <form class="form-floating">
-                            <input type="email" class="form-control" id="description"  value="Description of video" disabled>
-                            <label for="description">Description</label>
-                          </form>
-                    </div>
-                </div>
-                <div class="row mt-2">
-                    <div class="col-6">
-                        <button type="button" class="btn btn-warning" disabled>
-                            Views count <span class="badge bg-secondary"> 4</span>
-                          </button>
-                    </div>
-                    <div class="col-6">
-                        <button type="button" class="btn btn-primary">Link to youtube video</button>
-                    </div>
-                    
-                </div>
+            <div class="modal-body" >
+                <table class="table"> 
+                    <thead>
+                        <tr>
+                          <th scope="col">Image</th>
+                          <th scope="col">Title</th>
+                          <th scope="col">Duration</th>
+                          <th scope="col" > Description</th>
+                          <th scope="col">Views</th>
+                          <th scope="col">Ahutor (chanel)</th>
+                          <th scope="col">Link</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {% for value in data.values %}
+                        <tr>
+                          <td> <img src= {{ value.img }} alt="img" style="max-width: 90%;"></td>
+                          <td>{{ value.title }} </td>
+                          <td>{{ value.duration }} </td>
+                          <td style="word-break: break-all;">{{ value.description }}</td>
+                          <td>{{ values.view }}</td>
+                          <td>{{ value.author }}</td>
+                          <td><a type="button" class="btn btn-primary" href= {{ value.link }} >Link to youtube video</a></td> 
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                        
+                </table>
+
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
