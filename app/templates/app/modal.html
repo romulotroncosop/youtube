@@ -1,0 +1,41 @@
+<div class="modal-dialog modal-lg">
+    <div class="modal-content text-dark">
+      <div class="modal-header">
+        <h5 class="modal-title" id="ModalResult">Video List</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" >
+          <table class="table"> 
+              <thead>
+                  <tr>
+                    <th scope="col">Image</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Duration</th>
+                    <th scope="col" > Description</th>
+                    <th scope="col">Views</th>
+                    <th scope="col">Ahutor (chanel)</th>
+                    <th scope="col">Link</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for value in data.values %}
+                  <tr>
+                    <td> <img src= {{ value.img }} alt="img" style="max-width: 90%;"></td>
+                    <td>{{ value.title }} </td>
+                    <td>{{ value.duration }} </td>
+                    <td style="word-break: break-all;">{{ value.description }}</td>
+                    <td>{{ values.view }}</td>
+                    <td>{{ value.author }}</td>
+                    <td><a type="button" class="btn btn-primary" href= {{ value.link }} >Link to youtube video</a></td> 
+                  </tr>
+                  {% endfor %}
+              </tbody>
+                  
+          </table>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
